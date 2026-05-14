@@ -1,0 +1,27 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Legalize.id — Jasa Pendirian PT, CV & PT PMA | 14 Hari Selesai',
+  description = 'Layanan pengurusan PT, CV, PT PMA online. Setup dalam 14 hari, transparent pricing, 2.500+ founder Indonesia sudah pakai. Mulai Rp 4.5jt.',
+} = Astro.props;
+---
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <slot />
+</body>
+</html>

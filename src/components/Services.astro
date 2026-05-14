@@ -1,0 +1,62 @@
+---
+const services = [
+  {
+    icon:'🚀', badge:'Paling Diminati', badgeDark:false,
+    name:'Pendirian PT Reguler', price:'Rp 4,5 jt', days:'14 hari kerja',
+    items:['Akta pendirian + SK Menkumham','NPWP badan + NIB OSS','Konsultasi nama PT (3 opsi)','Revisi sampai diterima Menkumham'],
+  },
+  {
+    icon:'⚡', badge:'Express', badgeDark:true,
+    name:'Pendirian PT Express', price:'Rp 6,5 jt', days:'7 hari kerja',
+    items:['Semua layanan PT Reguler','Priority handling di antrian notaris','Konsultasi struktur saham (1 sesi)','Bonus: kop surat + stempel PT'],
+  },
+  {
+    icon:'📋', badge:null, badgeDark:false,
+    name:'Pendirian CV', price:'Rp 2,5 jt', days:'10 hari kerja',
+    items:['Akta pendirian + pendaftaran AHU','NPWP badan + NIB','Konsultasi bidang usaha (KBLI)'],
+  },
+  {
+    icon:'🌐', badge:null, badgeDark:false,
+    name:'Pendirian PT PMA', price:'Rp 18 jt', days:'30 hari kerja',
+    items:['Untuk investor asing (foreign shareholder)','Konsultasi KBLI & izin BKPM','Pengurusan dokumen lengkap','Notaris berpengalaman PMA'],
+  },
+];
+---
+<style>
+  .svc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .svc-card { background:var(--color-canvas); border-radius:var(--radius-xl); padding:28px; display:flex; flex-direction:column; gap:12px; }
+  .svc-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+  .svc-icon { font-size:24px; }
+  .svc-badge { background:var(--color-primary-pale); color:var(--color-positive-deep); font-size:11px; font-weight:700; padding:3px 8px; border-radius:var(--radius-pill); }
+  .svc-badge-dark { background:var(--color-ink); color:var(--color-primary); }
+  .svc-name { font-size:18px; font-weight:700; letter-spacing:-.3px; }
+  .svc-price { font-size:24px; font-weight:900; letter-spacing:-.5px; }
+  .svc-price span { font-size:13px; font-weight:400; color:var(--color-mute); }
+  .svc-items { list-style:none; display:flex; flex-direction:column; gap:6px; }
+  .svc-items li { font-size:14px; color:var(--color-body); display:flex; align-items:center; gap:8px; }
+  .svc-items li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--color-positive); flex-shrink:0; }
+  .svc-days { font-size:13px; font-weight:600; color:var(--color-mute); margin-top:auto; }
+  @media (max-width:767px) { .svc-grid { grid-template-columns:1fr; } }
+</style>
+<section class="section" id="layanan-detail">
+  <div class="container">
+    <div class="s-hdr">
+      <div class="s-eye">Layanan kami</div>
+      <h2 style="font-size:40px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;">Pilih layanan yang<br>sesuai kebutuhan.</h2>
+    </div>
+    <div class="svc-grid">
+      {services.map(s => (
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-icon">{s.icon}</div>
+            {s.badge && <span class={`svc-badge${s.badgeDark ? ' svc-badge-dark' : ''}`}>{s.badge}</span>}
+          </div>
+          <div class="svc-name">{s.name}</div>
+          <div class="svc-price">{s.price} <span>mulai dari</span></div>
+          <ul class="svc-items">{s.items.map(item => <li>{item}</li>)}</ul>
+          <div class="svc-days">⏱ {s.days}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

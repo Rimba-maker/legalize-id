@@ -1,0 +1,37 @@
+---
+const reasons = [
+  { icon:'📈', title:'Fundraising & Investasi', body:'VC dan investor hanya invest ke PT. CV bukan badan hukum — tidak bisa menerima saham atau term sheet.' },
+  { icon:'🤝', title:'Klien Corporate & Pemerintah', body:'Tender pemerintah dan banyak vendor corporate mensyaratkan PT. Tanpa itu, deal besar tidak akan terjadi.' },
+  { icon:'🛡️', title:'Pisahkan Aset Pribadi', body:'PT adalah badan hukum terpisah. Hutang bisnis tidak menyentuh aset pribadi Anda — ini yang disebut limited liability.' },
+  { icon:'💼', title:'Kredibilitas Lebih Tinggi', body:'Domain @perusahaan.com, NPWP badan, dan profil PT meningkatkan trust untuk deal B2B maupun klien besar.' },
+  { icon:'🌐', title:'Bisa Multi-Owner', body:'PT bisa menampung hingga 50 pemegang saham. CV hanya 2 pihak. PT jauh lebih fleksibel untuk co-founder setup.' },
+  { icon:'💰', title:'Optimasi Pajak', body:'PT punya struktur pajak fleksibel — PPh Final UMKM 0,5% atau PPh Badan 22%. CV terkena PPh Pribadi yang lebih tinggi.' },
+];
+---
+<style>
+  .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .why-card { background:var(--color-canvas); border-radius:var(--radius-xl); padding:28px; }
+  .why-icon { font-size:28px; margin-bottom:14px; }
+  .why-title { font-size:17px; font-weight:700; letter-spacing:-.3px; margin-bottom:8px; }
+  .why-body { font-size:15px; color:var(--color-body); line-height:1.6; }
+  @media (max-width:1023px) { .why-grid { grid-template-columns:1fr 1fr; } }
+  @media (max-width:767px) { .why-grid { grid-template-columns:1fr; } }
+</style>
+<section class="section section-soft" id="layanan">
+  <div class="container">
+    <div class="s-hdr">
+      <div class="s-eye">Kenapa harus PT?</div>
+      <h2 style="font-size:40px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;">Goals bisnis Anda perlu<br>badan hukum yang tepat.</h2>
+      <p style="font-size:17px;color:var(--color-body);line-height:1.6;max-width:580px;">Tidak semua bisnis butuh PT — tapi untuk goals berikut, PT adalah langkah yang tidak bisa ditunda.</p>
+    </div>
+    <div class="why-grid">
+      {reasons.map(r => (
+        <div class="why-card">
+          <div class="why-icon">{r.icon}</div>
+          <div class="why-title">{r.title}</div>
+          <p class="why-body">{r.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

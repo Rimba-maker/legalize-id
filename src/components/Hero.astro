@@ -1,0 +1,50 @@
+---
+---
+<style>
+  .hero { background: var(--color-canvas-soft); padding: 80px 24px 72px; }
+  .hero-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .eyebrow { display:inline-flex; align-items:center; gap:6px; background:var(--color-primary-pale); color:var(--color-positive-deep); font-size:12px; font-weight:600; padding:4px 12px; border-radius:var(--radius-pill); margin-bottom:20px; }
+  .eyebrow-dot { width:6px; height:6px; border-radius:50%; background:var(--color-positive); }
+  .hero-h1 { font-size:64px; font-weight:900; line-height:1.0; letter-spacing:-2.5px; color:var(--color-ink); margin-bottom:20px; }
+  .hero-h1 em { font-style:normal; color:var(--color-positive-deep); }
+  .hero-sub { font-size:18px; color:var(--color-body); line-height:1.6; margin-bottom:32px; }
+  .hero-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .hero-card { background:var(--color-canvas); border-radius:var(--radius-xl); padding:32px; box-shadow:0 2px 20px rgba(14,15,12,.06),0 1px 4px rgba(14,15,12,.04); }
+  .card-label { font-size:11px; font-weight:600; color:var(--color-mute); text-transform:uppercase; letter-spacing:.8px; margin-bottom:20px; }
+  .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+  .stat { background:var(--color-canvas-soft); border-radius:var(--radius-lg); padding:16px; }
+  .stat-num { font-size:28px; font-weight:900; color:var(--color-ink); letter-spacing:-1px; line-height:1; margin-bottom:4px; }
+  .stat-lbl { font-size:13px; color:var(--color-body); }
+  .badges { display:flex; flex-wrap:wrap; gap:8px; }
+  @media (max-width:1023px) { .hero-inner { grid-template-columns:1fr; gap:40px; } .hero-h1 { font-size:48px; } }
+  @media (max-width:767px) { .hero { padding:48px 20px; } .hero-h1 { font-size:36px; letter-spacing:-1.2px; } }
+</style>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span>2.500+ PT Setup · Sejak 2020</div>
+      <h1 class="hero-h1">Setup PT Anda.<br><em>14 Hari</em>.<br>Online.</h1>
+      <p class="hero-sub">Dari konsultasi nama sampai SK Menkumham. Proses 100% online, harga transparan, dan ada tim yang menemani tiap langkahnya.</p>
+      <div class="hero-actions">
+        <a href="#konsultasi" class="btn-primary">Mulai Setup PT →</a>
+        <a href="#paket" class="btn-outline">Lihat Harga</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="card-label">Dipercaya founder Indonesia</div>
+      <div class="stats-grid">
+        <div class="stat"><div class="stat-num">2.500+</div><div class="stat-lbl">PT & CV didirikan</div></div>
+        <div class="stat"><div class="stat-num">14hr</div><div class="stat-lbl">Rata-rata selesai</div></div>
+        <div class="stat"><div class="stat-num">98%</div><div class="stat-lbl">Tingkat kepuasan</div></div>
+        <div class="stat"><div class="stat-num">25+</div><div class="stat-lbl">Notaris partner</div></div>
+      </div>
+      <div class="badges">
+        <span class="badge">✓ 14 Hari Garansi</span>
+        <span class="badge">✓ 100% Online</span>
+        <span class="badge">✓ No Hidden Fee</span>
+        <span class="badge">✓ SK Menkumham</span>
+      </div>
+    </div>
+  </div>
+</section>

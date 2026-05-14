@@ -1,0 +1,38 @@
+---
+---
+<style>
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--color-canvas);
+    border-bottom: 1px solid rgba(14,15,12,.08);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1200px; margin: 0 auto;
+  }
+  .logo { font-size: 20px; font-weight: 900; color: var(--color-ink); text-decoration: none; letter-spacing: -.5px; }
+  .logo span { color: var(--color-positive); }
+  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 14px; font-weight: 600; color: var(--color-ink); text-decoration: none; transition: opacity .15s; }
+  .nav-links a:hover { opacity: .55; }
+  .btn-nav {
+    background: var(--color-primary); color: var(--color-on-primary);
+    font-size: 14px; font-weight: 600; padding: 10px 20px;
+    border-radius: var(--radius-xl); text-decoration: none; transition: background .15s;
+  }
+  .btn-nav:hover { background: var(--color-primary-active); }
+  @media (max-width: 767px) { .nav-links { display: none; } }
+</style>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">Legalize<span>.id</span></a>
+    <ul class="nav-links">
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#paket">Paket</a></li>
+      <li><a href="#proses">Proses</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#konsultasi" class="btn-nav">Mulai Setup</a>
+  </div>
+</nav>

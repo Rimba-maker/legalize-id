@@ -1,0 +1,39 @@
+---
+const steps = [
+  { n:1, days:'Day 1–2', title:'Onboarding', items:['Konsultasi nama PT (3 opsi)','Konfirmasi struktur saham','Konfirmasi alamat domisili'] },
+  { n:2, days:'Day 3–5', title:'Akta Pendirian', items:['Drafting akta oleh notaris partner','Review bersama Anda','Tanda tangan akta'] },
+  { n:3, days:'Day 6–10', title:'Pengesahan Menkumham', items:['Pengajuan ke AHU Online','SK Menkumham terbit','NPWP badan apply'] },
+  { n:4, days:'Day 11–14', title:'Dokumen Final', items:['NPWP & NIB OSS terbit','Handover dokumen lengkap','PT Anda resmi berdiri ✓'] },
+];
+---
+<style>
+  .tl { display:grid; grid-template-columns:repeat(4,1fr); position:relative; }
+  .tl::before { content:''; position:absolute; top:24px; left:calc(12.5% + 8px); right:calc(12.5% + 8px); height:2px; background:var(--color-primary-neutral); }
+  .tl-step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 16px; }
+  .tl-dot { width:48px; height:48px; border-radius:50%; background:var(--color-primary); display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:900; color:var(--color-on-primary); margin-bottom:18px; position:relative; z-index:1; }
+  .tl-days { font-size:11px; font-weight:600; color:var(--color-positive-deep); background:var(--color-primary-pale); padding:2px 8px; border-radius:var(--radius-pill); margin-bottom:10px; }
+  .tl-title { font-size:15px; font-weight:700; margin-bottom:10px; letter-spacing:-.2px; }
+  .tl-items { list-style:none; display:flex; flex-direction:column; gap:5px; }
+  .tl-items li { font-size:13px; color:var(--color-body); line-height:1.4; }
+  @media (max-width:1023px) { .tl { grid-template-columns:1fr 1fr; gap:32px; } .tl::before { display:none; } }
+  @media (max-width:767px) { .tl { grid-template-columns:1fr; } }
+</style>
+<section class="section" id="proses">
+  <div class="container">
+    <div class="s-hdr">
+      <div class="s-eye">Prosesnya</div>
+      <h2 style="font-size:40px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;">14 Hari. Dari setup<br>ke SK Menkumham.</h2>
+      <p style="font-size:17px;color:var(--color-body);line-height:1.6;max-width:580px;">Tidak ada antrian notaris, tidak ada bolak-balik. Semua diurus tim kami, Anda cukup tanda tangan.</p>
+    </div>
+    <div class="tl">
+      {steps.map(s => (
+        <div class="tl-step">
+          <div class="tl-dot">{s.n}</div>
+          <div class="tl-days">{s.days}</div>
+          <div class="tl-title">{s.title}</div>
+          <ul class="tl-items">{s.items.map(i => <li>{i}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

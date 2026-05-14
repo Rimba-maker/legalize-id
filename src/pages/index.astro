@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import WhyPT from '../components/WhyPT.astro';
+import Services from '../components/Services.astro';
+import Pricing from '../components/Pricing.astro';
+import Timeline from '../components/Timeline.astro';
+import WhyUs from '../components/WhyUs.astro';
+import FAQ from '../components/FAQ.tsx';
+import CTABand from '../components/CTABand.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout>
+  <Navbar />
+  <main>
+    <Hero />
+    <WhyPT />
+    <Services />
+    <Pricing />
+    <Timeline />
+    <WhyUs />
+
+    <!-- FAQ — React island -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="s-hdr">
+          <div class="s-eye">Pertanyaan umum</div>
+          <h2 style="font-size:40px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;">FAQ</h2>
+          <p style="font-size:17px;color:var(--color-body);line-height:1.6;max-width:580px;">Ada pertanyaan lain? Chat langsung via WhatsApp.</p>
+        </div>
+        <div style="max-width:720px;">
+          <FAQ client:visible />
+        </div>
+      </div>
+    </section>
+
+    <CTABand />
+  </main>
+  <Footer />
+</BaseLayout>

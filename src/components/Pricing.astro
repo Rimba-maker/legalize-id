@@ -1,0 +1,101 @@
+---
+const packages = [
+  {
+    tier:'Starter', name:'🌱 Starter Package', featured:false,
+    desc:'Cocok untuk UMKM kecil & single founder yang butuh PT tanpa ribet.',
+    price:'Rp 4,5 jt', note:'termasuk notaris partner',
+    items:[
+      { ok:true, text:'Konsultasi nama & struktur PT' },
+      { ok:true, text:'Akta pendirian PT' },
+      { ok:true, text:'SK Menkumham (digital + cetak)' },
+      { ok:true, text:'NPWP badan' },
+      { ok:true, text:'NIB OSS' },
+      { ok:false, text:'Domisili virtual office' },
+      { ok:false, text:'Konsultasi pajak' },
+    ],
+    cta:'Pilih Starter',
+  },
+  {
+    tier:'Founder', name:'🌿 Founder Package', featured:true, popular:true,
+    desc:'Cocok untuk startup & bisnis yang sedang tumbuh.',
+    price:'Rp 6,5 jt', note:'termasuk virtual office 1 tahun',
+    items:[
+      { ok:true, text:'Semua dari Starter Package' },
+      { ok:true, text:'Domisili virtual office (1 tahun)' },
+      { ok:true, text:'Konsultasi struktur saham' },
+      { ok:true, text:'Konsultasi pajak setup (1 sesi)' },
+      { ok:true, text:'Stempel PT + kop surat design' },
+      { ok:true, text:'Rekomendasi akun bank bisnis' },
+    ],
+    cta:'Pilih Founder Package',
+  },
+  {
+    tier:'Enterprise', name:'🌳 Enterprise Package', featured:false,
+    desc:'Cocok untuk fundraising, multi-shareholder & setup korporat.',
+    price:'Rp 12 jt', note:'termasuk cap table & shareholder agreement',
+    items:[
+      { ok:true, text:'Semua dari Founder Package' },
+      { ok:true, text:'Custom anggaran dasar (vesting, drag-along)' },
+      { ok:true, text:'Cap table setup' },
+      { ok:true, text:'Shareholder agreement template' },
+      { ok:true, text:'Konsultasi tax planning (3 sesi)' },
+      { ok:true, text:'Annual compliance reminder 1 tahun' },
+    ],
+    cta:'Pilih Enterprise',
+  },
+];
+---
+<style>
+  .pkg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
+  .pkg-card { background:var(--color-canvas-soft); border-radius:var(--radius-xl); padding:32px; display:flex; flex-direction:column; position:relative; }
+  .pkg-featured { background:var(--color-ink); color:var(--color-canvas); }
+  .pkg-popular { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--color-primary); color:var(--color-on-primary); font-size:11px; font-weight:700; padding:4px 14px; border-radius:var(--radius-pill); white-space:nowrap; }
+  .pkg-tier { font-size:11px; font-weight:600; color:var(--color-mute); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .pkg-featured .pkg-tier { color:rgba(255,255,255,.4); }
+  .pkg-name { font-size:22px; font-weight:900; letter-spacing:-.5px; margin-bottom:4px; }
+  .pkg-desc { font-size:13px; color:var(--color-body); margin-bottom:24px; line-height:1.5; }
+  .pkg-featured .pkg-desc { color:rgba(255,255,255,.6); }
+  .pkg-price { font-size:36px; font-weight:900; letter-spacing:-1.5px; margin-bottom:4px; }
+  .pkg-note { font-size:13px; color:var(--color-mute); margin-bottom:28px; }
+  .pkg-featured .pkg-note { color:rgba(255,255,255,.45); }
+  .pkg-div { height:1px; background:rgba(14,15,12,.1); margin-bottom:24px; }
+  .pkg-featured .pkg-div { background:rgba(255,255,255,.15); }
+  .pkg-items { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:28px; flex-grow:1; }
+  .pkg-items li { font-size:14px; color:var(--color-body); display:flex; align-items:flex-start; gap:8px; line-height:1.4; }
+  .pkg-featured .pkg-items li { color:rgba(255,255,255,.8); }
+  .ic-ok { color:var(--color-positive); flex-shrink:0; }
+  .ic-no { color:var(--color-mute); flex-shrink:0; }
+  .pkg-cta { display:block; text-align:center; background:var(--color-primary); color:var(--color-on-primary); font-size:15px; font-weight:600; padding:12px 24px; border-radius:var(--radius-xl); text-decoration:none; transition:background .15s; }
+  .pkg-cta:hover { background:var(--color-primary-active); }
+  .pkg-cta-ghost { background:var(--color-canvas); color:var(--color-ink); border:1.5px solid rgba(14,15,12,.15); }
+  .pkg-cta-ghost:hover { background:var(--color-canvas-soft); }
+  @media (max-width:1023px) { .pkg-grid { grid-template-columns:1fr; max-width:420px; margin:0 auto; } }
+</style>
+<section class="section section-soft" id="paket">
+  <div class="container">
+    <div class="s-hdr">
+      <div class="s-eye">Paket harga</div>
+      <h2 style="font-size:40px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;">Transparan dari awal.<br>Tidak ada biaya tersembunyi.</h2>
+      <p style="font-size:17px;color:var(--color-body);line-height:1.6;max-width:580px;">Semua paket termasuk konsultasi nama, drafting akta, dan SK Menkumham.</p>
+    </div>
+    <div class="pkg-grid">
+      {packages.map(p => (
+        <div class={`pkg-card${p.featured ? ' pkg-featured' : ''}`}>
+          {p.popular && <div class="pkg-popular">⭐ Paling Populer</div>}
+          <div class="pkg-tier">{p.tier}</div>
+          <div class="pkg-name">{p.name}</div>
+          <p class="pkg-desc">{p.desc}</p>
+          <div class="pkg-price">{p.price}</div>
+          <div class="pkg-note">{p.note}</div>
+          <div class="pkg-div"></div>
+          <ul class="pkg-items">
+            {p.items.map(item => (
+              <li><span class={item.ok ? 'ic-ok' : 'ic-no'}>{item.ok ? '✓' : '✗'}</span>{item.text}</li>
+            ))}
+          </ul>
+          <a href="#konsultasi" class={`pkg-cta${!p.featured ? ' pkg-cta-ghost' : ''}`}>{p.cta}</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

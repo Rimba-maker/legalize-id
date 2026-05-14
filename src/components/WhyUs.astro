@@ -1,0 +1,36 @@
+---
+const usps = [
+  { icon:'⚡', title:'14 Hari Garansi', body:'Lewat dari 14 hari? Anda berhak refund parsial atau penuh sesuai paket. Bukan janji — ini komitmen tertulis.' },
+  { icon:'💻', title:'100% Online Process', body:'Dari cek nama sampai SK Menkumham, semua dari laptop. Tidak perlu ke kantor notaris atau antri di kelurahan.' },
+  { icon:'💎', title:'Transparent Pricing', body:'No hidden fee. Breakdown biaya sudah jelas di awal sebelum Anda bayar. Tidak ada surprise di akhir proses.' },
+  { icon:'👨‍💼', title:'Dedicated Consultant', body:'Satu PIC dari konsultasi sampai handover dokumen. Tidak perlu re-explain kasusmu ke orang berbeda.' },
+  { icon:'🌐', title:'25+ Notaris Partner', body:'Jaringan notaris bersertifikat Menkumham di seluruh Indonesia. Selalu ada slot, tidak perlu tunggu berbulan-bulan.' },
+  { icon:'📱', title:'WhatsApp Support', body:'Tanya kapan saja di jam kerja. Response rata-rata <2 jam. Tidak ada bot — selalu dijawab manusia yang paham kasusmu.' },
+];
+---
+<style>
+  .usp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .usp-card { background:var(--color-canvas); border-radius:var(--radius-xl); padding:28px; }
+  .usp-icon { font-size:28px; margin-bottom:14px; }
+  .usp-title { font-size:17px; font-weight:700; letter-spacing:-.3px; margin-bottom:8px; }
+  .usp-body { font-size:14px; color:var(--color-body); line-height:1.6; }
+  @media (max-width:1023px) { .usp-grid { grid-template-columns:1fr 1fr; } }
+  @media (max-width:767px) { .usp-grid { grid-template-columns:1fr; } }
+</style>
+<section class="section section-soft">
+  <div class="container">
+    <div class="s-hdr">
+      <div class="s-eye">Kenapa Legalize.id?</div>
+      <h2 style="font-size:40px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;">2.500+ founder pilih kami<br>karena alasan ini.</h2>
+    </div>
+    <div class="usp-grid">
+      {usps.map(u => (
+        <div class="usp-card">
+          <div class="usp-icon">{u.icon}</div>
+          <div class="usp-title">{u.title}</div>
+          <p class="usp-body" set:html={u.body} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

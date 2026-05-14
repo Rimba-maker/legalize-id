@@ -1,0 +1,73 @@
+---
+---
+<style>
+  footer { background:var(--color-ink); border-top:1px solid rgba(255,255,255,.07); padding:56px 24px 32px; }
+  .ft-inner { max-width:1200px; margin:0 auto; }
+  .ft-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+  .ft-brand { font-size:20px; font-weight:900; color:var(--color-canvas); margin-bottom:12px; }
+  .ft-brand span { color:var(--color-primary); }
+  .ft-tagline { font-size:14px; color:rgba(255,255,255,.45); line-height:1.6; margin-bottom:20px; }
+  .ft-social { display:flex; gap:8px; }
+  .ft-social a { width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; font-size:13px; text-decoration:none; transition:background .15s; }
+  .ft-social a:hover { background:rgba(255,255,255,.2); }
+  .ft-col-title { font-size:11px; font-weight:600; color:rgba(255,255,255,.35); text-transform:uppercase; letter-spacing:.8px; margin-bottom:16px; }
+  .ft-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .ft-links a { font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .15s; }
+  .ft-links a:hover { color:var(--color-canvas); }
+  .ft-bottom { border-top:1px solid rgba(255,255,255,.07); padding-top:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .ft-legal { font-size:12px; color:rgba(255,255,255,.3); }
+  .ft-legal a { color:rgba(255,255,255,.45); text-decoration:none; }
+  .ft-legal a:hover { color:var(--color-canvas); }
+  @media (max-width:1023px) { .ft-grid { grid-template-columns:1fr 1fr; gap:32px; } }
+  @media (max-width:767px) { .ft-grid { grid-template-columns:1fr; } }
+</style>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand">Legalize<span>.id</span></div>
+        <p class="ft-tagline">Helping Indonesia's entrepreneurs go legal — faster. Partner 25+ notaris bersertifikat Menkumham di seluruh Indonesia.</p>
+        <div class="ft-social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="LinkedIn">💼</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">Layanan</div>
+        <ul class="ft-links">
+          <li><a href="#layanan-detail">Pendirian PT</a></li>
+          <li><a href="#layanan-detail">Pendirian CV</a></li>
+          <li><a href="#layanan-detail">PT PMA</a></li>
+          <li><a href="#layanan-detail">Perubahan Anggaran</a></li>
+          <li><a href="#layanan-detail">Pembubaran PT</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Resources</div>
+        <ul class="ft-links">
+          <li><a href="#">Blog Founder</a></li>
+          <li><a href="#">Glossary Hukum</a></li>
+          <li><a href="#">Cek Nama PT (Gratis)</a></li>
+          <li><a href="#">Kalkulator Estimasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Perusahaan</div>
+        <ul class="ft-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Karir</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+          <li><a href="#">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-legal">© 2024 PT Legalize Indonesia. Terdaftar dan beroperasi secara sah di Indonesia. <a href="#">Kebijakan Privasi</a> · <a href="#">Syarat & Ketentuan</a></p>
+      <p class="ft-legal">Dioperasikan bersama jaringan 25+ notaris bersertifikat Menkumham</p>
+    </div>
+  </div>
+</footer>
